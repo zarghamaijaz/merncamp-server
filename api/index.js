@@ -39,8 +39,8 @@ app.use(cors({
 // autoload routes from directory
 // readdirSync('./api/routes').map(r => app.use('/api', require(`./routes/${r}`)));
 
-app.use('api/auth', require('./routes/auth'));
-app.use('api/post', require('./routes/post'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/post', require('./routes/post'));
 
 // socket.io
 // io.on('connect', (socket)=>{
