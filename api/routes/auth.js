@@ -22,4 +22,6 @@ router.get("/user/:username", getUser)
 
 router.get("/current-admin", requireSignin, isAdmin, currentUser)
 
-module.exports = router;
+export default router;
+
+// module.exports = router;
