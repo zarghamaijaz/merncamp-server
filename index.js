@@ -57,6 +57,6 @@ io.on('connect', (socket)=>{
 
 const port = process.env.PORT || 8000;
 
-module.exports = app;
 
 http.listen(port, ()=>console.log("App is running on port ", port))
+module.exports = app;
