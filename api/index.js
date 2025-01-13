@@ -18,7 +18,12 @@ const io = require('socket.io')(http, {
 }});
 
 //db
-mongoose.connect(process.env.DATABASE).then(()=>console.log("Database connected"))
+mongoose.connect(process.env.DATABASE, {
+    useNewUrlParser:true,
+    useFindAndModify:false,
+    useUniFiedTopology:true,
+    useCreateIndex:true
+}).then(()=>console.log("Database connected"))
 .catch(err=>console.log(err));
 
 // Middlewares
