@@ -33,7 +33,7 @@ app.use(express.json({
 }))
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin:["http://localhost:3000", "http://localhost:3001"],
+    origin:["http://localhost:3000", "https://merncamp-client-kkb3mnody-zarghams-projects-e24dbaa4.vercel.app"],
 }))
 
 // autoload routes from directory
