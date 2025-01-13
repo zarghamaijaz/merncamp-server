@@ -29,5 +29,4 @@ router.get("/post/:_id", getPost);
 // admin
 router.delete("/admin/delete-post/:_id", requireSignin, isAdmin, deletePost)
 
-// module.exports = router;
-export default router;
+module.exports = router;

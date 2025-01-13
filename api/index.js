@@ -45,8 +45,8 @@ app.get('/', (req,res) => {
 app.get('/test', (req,res) => {
     return res.send("Hello");
 });
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/post', require('./routes/post'));
+app.use('/api', require('./routes/auth'));
+app.use('/api', require('./routes/post'));
 
 // socket.io
 // io.on('connect', (socket)=>{
