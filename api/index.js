@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import cors from "cors"
 require("dotenv").config();
 
-import {readdirSync} from "fs"
+// import {readdirSync} from "fs"
 
 
 
@@ -37,7 +37,10 @@ app.use(cors({
 }))
 
 // autoload routes from directory
-readdirSync('./api/routes').map(r => app.use('/api', require(`./routes/${r}`)));
+// readdirSync('./api/routes').map(r => app.use('/api', require(`./routes/${r}`)));
+
+app.use('api/auth', require('./routes/auth'));
+app.use('api/post', require('./routes/post'));
 
 // socket.io
 // io.on('connect', (socket)=>{
