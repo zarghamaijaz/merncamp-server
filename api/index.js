@@ -39,6 +39,12 @@ app.use(cors({
 // autoload routes from directory
 // readdirSync('./api/routes').map(r => app.use('/api', require(`./routes/${r}`)));
 
+app.get('/', (req,res) => {
+    return res.send("HOME");
+});
+app.get('/test', (req,res) => {
+    return res.send("Hello");
+});
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/post', require('./routes/post'));
 
