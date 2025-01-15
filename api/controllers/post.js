@@ -57,6 +57,12 @@ export const uploadImage = async (req, res) => {
     console.log("Req files => ", req.files);
     try{
         const result = await cloudinary.uploader.upload(req.files.image.path);
+        const user = await User.findById(req.auth._id);
+        user.image = {
+            url: result.secure_url,
+            public_id: result.public_id
+        }
+        await user.save();
         console.log("UPLOADED => ", result);
         res.json({
             url:result.secure_url,
